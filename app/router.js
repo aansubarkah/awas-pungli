@@ -6,6 +6,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('contribute');
+  this.route('about');
+  this.route('disclaimer');
+  this.route('markerviews');
+  this.route('markers');
+  this.route('categories');
 });
 
 export default Router;

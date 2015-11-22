@@ -31,8 +31,8 @@ module.exports = function(environment) {
 
 		googleMap: {
 			libraries: ['places', 'geometry'],
-			//apiKey: 'AIzaSyCNNx7nk22X892vSkB9C5pIChfl4wAb6c8'//on production
-			apiKey: 'AIzaSyAwKFM_JN6cwBiSn13ALJVuoR9gcvAW1OE'//on localhost
+			apiKey: 'AIzaSyCNNx7nk22X892vSkB9C5pIChfl4wAb6c8'//on production
+			//apiKey: 'AIzaSyAwKFM_JN6cwBiSn13ALJVuoR9gcvAW1OE'//on localhost
 		}
 
 	};

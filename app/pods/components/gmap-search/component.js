@@ -1,0 +1,33 @@
+//to make JSHint happy
+/*global google:false*/
+
+import Ember from 'ember';
+
+export default Ember.Component.extend({
+    tagName: 'input',
+    classNames: ['form-control'],
+    attributeBindings: ['placeholder'],
+    placeholder: 'Jump to a location',
+    init() {
+        this._super(...arguments);
+    },
+    didInsertElement: function () {
+        var that = this;
+        var options = {
+            types: ['geocode'],
+            componentRestrictions: {country: 'id'}
+        };
+        var autocomplete = new google.maps.places.Autocomplete(this.$()[0], options);
+        autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                window.alert("Autocomplete's returned place contains no geometry");
+                return;
+            }
+            //console.log(place.geometry.location.lat());
+            var lat = place.geometry.location.lat();
+            var lng = place.geometry.location.lng();
+            that.sendAction('refreshPlace', lat, lng);
+        });
+    }
+});
