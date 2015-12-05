@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('markerviews');
   this.route('markers');
   this.route('categories');
+  this.route('loading');
 });
 
 export default Router;
